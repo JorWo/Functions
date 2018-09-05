@@ -1,5 +1,5 @@
 function playGame() {
-  //Ask player one ofr a number between 1 and 4
+  //Ask player one for a number between 1 and 4
   var p1 = prompt("Player one. Number between 1 and 4");
   //Ask player two for a number between 1 and 4
   var p2 = prompt("Player two. Number between 1 and 4");
