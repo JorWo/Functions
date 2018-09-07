@@ -1,0 +1,47 @@
+<html>
+
+  <head>
+
+  </head>
+
+  <body>
+    <script>
+      var pizza = {
+        dough: ["Whole wheat", "Flat bread", "Thin", "Pan", "Deep dish"],
+        sauce: ["marinara", "bbq", "honey mustard", "alfredo"],
+        meats: ["meatballs", "pepperoni", "chicken", "bacon"],
+        veg: ["mushrooms", "onions", "basil", "brocolli", "potato"],
+        cheese: ["pepperjack", "provolone", "mozzarella", "cheddar", "American"],
+        square: false,
+        hexagon: false,
+        price: 20
+      };
+
+      function randoPizza() {
+        var rDough = Math.floor(Math.random() * pizza.dough.length);
+        var rSauce = Math.floor(Math.random() * pizza.sauce.length);
+        var rMeats = Math.floor(Math.random() * pizza.meats.length);
+        var rVeg = Math.floor(Math.random() * pizza.veg.length);
+        var rCheese = Math.floor(Math.random() * pizza.cheese.length);
+        var askSquare = prompt("Are you expecting a square pizza? Y or N");
+        askSquare.toLowerCase();
+        if ((askSquare === 'y') && (pizza.square === false)) {
+          document.getElementById('showResults').innerHTML = "Sorry, Pizza is round";
+		      return;
+        }
+        var askHex = prompt("Are you expecting a hexagonal pizza? Y or N");
+        askHex.toLowerCase();
+        if ((askHex === 'y') && (pizza.hexagon === false)) {
+        document.getElementById('showResults').innerHTML = "Sorry, Pizza is round";
+        return;
+      }
+
+      document.getElementById('showResults').innerHTML = "Your Pizza: You are eating a " + pizza.dough[rDough] + " pizza with " + pizza.sauce[rSauce] + " sauce, " + pizza.meats[rMeats] + ", " + pizza.veg[rVeg] + ", and " + pizza.cheese[rCheese] + " cheese";
+}
+    </script>
+    <button onclick="randoPizza()">Random Pizza</button>
+    <p id="showResults">Your Pizza:</p>
+
+  </body>
+
+</html>
